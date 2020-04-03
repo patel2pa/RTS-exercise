@@ -35,27 +35,3 @@ const mapStateToProps = (State) => {
 export default connect(mapStateToProps,{ GetData })(Main)
 
 
-
-/*
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { GetData } from './React_Redux/action'
-
-
-
-function Test(props){  
-        const count = useSelector(state => state)
-        const dispatch = useDispatch()
-    return(
-        <div>
-            <button onClick = {()=>{ 
-                dispatch(GetData())}
-                }/>
-            <h1>{console.log(count, 'sgtr')}</h1>
-        </div>
-        )
-    }
-
-export default Test*/
-
-/*<input type="text" name="SearchQuary" onChange = {this.onChange} value={this.state.SearchQuary}/>*/

@@ -30,14 +30,15 @@ class Search extends React.Component {
         }
         this.props.GetData(SearchQuary)
     }
+
     render(){
         return (
             <div>
                 <input type="text" onChange={this.UpdateInput}/>
-               <select value = {this.props.SelectOptionsReducer.FirstOption} onChange = {this.onChangeSelectFirstOption}>
+                <select value = {this.props.SelectOptionsReducer.FirstOption} onChange = {this.onChangeSelectFirstOption}>
                     <option value = "search">Popular</option>
                     <option value = "search_by_date">Lastest</option>
-               </select>
+                </select>
                 <select value = {this.props.SelectOptionsReducer.SecondOption} onChange = {this.onChangeSelectSecondOption}>
                     <option value = "">All</option>
                     <option value = "story">Stories</option>

@@ -3,7 +3,7 @@ export const GetData = (SearchQuary= {
                         FirstOption:'search',
                         SecondOption:'',
                         PageNumber:''}) => dispatch => {
-  const SearchURL = `http://hn.algolia.com/api/v1/${SearchQuary.FirstOption}?query=${SearchQuary.SearchTerm}&tags=${SearchQuary.SecondOption}&hitsPerPage=20&page=${SearchQuary.PageNumber}`
+  const SearchURL = `https://hn.algolia.com/api/v1/${SearchQuary.FirstOption}?query=${SearchQuary.SearchTerm}&tags=${SearchQuary.SecondOption}&hitsPerPage=20&page=${SearchQuary.PageNumber}`
   fetch(SearchURL)
     .then(res => res.json())
     .then(results =>{ 
