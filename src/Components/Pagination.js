@@ -4,22 +4,40 @@ import { GetData } from '../React_Redux/Action'
 
 class Pagination extends React.Component {
     state = {
-        end:11,
+        end:10,
         over:0
     }
 
     RenderTestButtons = () =>{
+        console.log(this.state.end)
         let x = []
-        for(let i = this.state.end - 10; i < this.state.end; i++){
+        const nbPages = this.props.GetDataReducer.nbPages;
+        if (nbPages > 10){
+        for(let i = 0; i < this.state.end; i++){
         x.push(<button key={i} onClick = {(e)=>{
             const SearchQuary = {
                 SearchTerm: this.props.UpdateUserInputReducer.SearchTerm,
                 FirstOption:this.props.SelectOptionsReducer.FirstOption,
                 SecondOption: this.props.SelectOptionsReducer.SecondOption,
                 PageNumber: i
+                }
+                this.props.GetData(SearchQuary)}}>{i}</button>)
             }
-            this.props.GetData(SearchQuary)}}>{i}</button>)
+        
         }
+        else{
+            for(let i = 0; i < nbPages; i++){
+                x.push(<button key={i} onClick = {(e)=>{
+                    const SearchQuary = {
+                        SearchTerm: this.props.UpdateUserInputReducer.SearchTerm,
+                        FirstOption:this.props.SelectOptionsReducer.FirstOption,
+                        SecondOption: this.props.SelectOptionsReducer.SecondOption,
+                        PageNumber: i
+                    }
+                    this.props.GetData(SearchQuary)}}>{i}</button>)
+        }
+
+    }
         return x
     }
 
@@ -50,8 +68,7 @@ class Pagination extends React.Component {
     render(){
         return (
             <div>
-                <button onClick = {this.PreviousClick}> 
-                Previous </button> 
+                <button onClick = {this.PreviousClick}> Previous </button> 
                 {this.RenderTestButtons()}
                 <button onClick = {this.NextClick}> Next </button>
             </div>
