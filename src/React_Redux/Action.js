@@ -42,3 +42,10 @@ export const SelectOptions = (Option) => dispatch => {
     payload:Option
   })
 }
+
+export const PaginationAction = (test) => dispatch=>{
+  dispatch({
+    type: "TestPage",
+    payload: test
+  })
+}

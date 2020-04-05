@@ -49,13 +49,25 @@ const SelectOptionsReducer = (State = InitalState, Action) => {
             }
         default:
             return State
-        }
+    }
+}
+
+const initalState = {
+    PageNumber:11
+}
+
+const PaginationReducer = (State = initalState, Action) =>{
+    switch(Action.type){
+        case "TestPage":
+            return {...State, ...Action.payload}
+        default:
+            return State
+    }
 }
 
 
 
 
-
-const rootreducer = combineReducers({GetDataReducer, SaveSearchTermsReducer, UpdateUserInputReducer, SelectOptionsReducer})
+const rootreducer = combineReducers({GetDataReducer, SaveSearchTermsReducer, UpdateUserInputReducer, SelectOptionsReducer, PaginationReducer})
 
 export default rootreducer
