@@ -2,24 +2,36 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { GetData, UpdateInput, SelectOptions, PaginationAction } from '../React_Redux/Action'
 
+/*
+The Search class is used to get user input and set the option
+for the search quary, the search quary is then passed to the 
+the GetData action to set url and fetch data   
+*/
+
+
 class Search extends React.Component {
-
-   onChangeSelectFirstOption = (e) =>{
-    this.props.SelectOptions({
-        FirstOption:e.target.value
-        })
-   }
-
-   onChangeSelectSecondOption = (e) => {
-    this.props.SelectOptions({
-        SecondOption:e.target.value
-        })
+    
+    //sets options to new selected option
+    onChangeSelectFirstOption = (e) =>{
+        this.props.SelectOptions({
+            FirstOption:e.target.value
+            })
     }
 
-   UpdateInput = (e) =>{
-    this.props.UpdateInput({SearchTerm:e.target.value})
-    }
+    onChangeSelectSecondOption = (e) => {
+        this.props.SelectOptions({
+            SecondOption:e.target.value
+            })
+        }
 
+    /*
+    get input from the user and passes it to UpdateInput
+    */
+    UpdateInput = (e) =>{
+        this.props.UpdateInput({SearchTerm:e.target.value})
+        }
+
+    //passes the search quary to GetData on button click
     onSubmit = (e) =>{
         e.preventDefault();
         const SearchQuary = {

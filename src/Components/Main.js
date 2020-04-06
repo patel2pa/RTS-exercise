@@ -5,6 +5,10 @@ import Pagination from './Pagination'
 import Search from './Search'
 import SearchResults from './SearchResults'
 
+/*
+renders the other three classes
+*/
+
 class Main extends React.Component{
 
     componentDidMount = () => {

@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
 
 
-
-
 const GetDataReducer = (State ={Data: {}}, Action) => {
     switch (Action.type){
         case "FETCH_DATA":
@@ -19,7 +17,7 @@ const UpdateUserInputReducer = (State={Input:{SearchTerm:''}}, Action) => {
             return {Input:Action.payload}
         default:
             return State
-        }
+    }
 }
 
 const InitalState = {
@@ -45,7 +43,7 @@ const initalState = {
 
 const PaginationReducer = (State = initalState, Action) =>{
     switch(Action.type){
-        case "TestPage":
+        case "Change_in_end":
             return {...State, ...Action.payload}
         default:
             return State

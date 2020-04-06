@@ -2,6 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { GetData, PaginationAction } from '../React_Redux/Action'
 
+/*
+the pagination class is used render pages associated with search quary
+*/
 
 class Pagination extends React.Component {
    
