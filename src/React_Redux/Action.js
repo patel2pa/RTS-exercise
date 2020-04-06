@@ -20,13 +20,6 @@ export const GetData = (SearchQuary= {
 }
 
 
-export const GetSearchQuary = (Searchquary) => dispatch =>{
-  dispatch({
-    type: "FETCH_QUARY",
-    payload:Searchquary
-  })
-} 
-
 export const UpdateInput = (Input) => dispatch=>{
 dispatch({
   type:"FETCH_USER_INPUT",

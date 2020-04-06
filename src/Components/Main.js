@@ -11,19 +11,19 @@ class Main extends React.Component{
         this.props.GetData()
     }
    
-render(){  
-    return(
-        <div>
-            {this.props.GetDataReducer.SearchURL}
-            <Search/>
-            <Pagination/>
-            <SearchResults/>
-        </div>
-        )
+    render(){  
+        return(
+            <div>
+                {this.props.GetDataReducer.SearchURL}
+                <Search/>
+                <Pagination/>
+                <SearchResults/>
+            </div>
+            )
+
+        }
 
     }
-
-}
 
 
 const mapStateToProps = (State) => {

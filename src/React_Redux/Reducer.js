@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const SearchTermStorage = []
+
 
 
 const GetDataReducer = (State ={Data: {}}, Action) => {
@@ -11,19 +11,6 @@ const GetDataReducer = (State ={Data: {}}, Action) => {
             return State;
     }
 }
-
-const SaveSearchTermsReducer = (state, action) => {
-    
-    switch(action.type){
-        case "FETCH_QUARY":
-            SearchTermStorage.push(action.payload)
-            return SearchTermStorage
-        
-        default:
-            return SearchTermStorage;
-    }
-}
-
 
 
 const UpdateUserInputReducer = (State={Input:{SearchTerm:''}}, Action) => {
@@ -68,6 +55,6 @@ const PaginationReducer = (State = initalState, Action) =>{
 
 
 
-const rootreducer = combineReducers({GetDataReducer, SaveSearchTermsReducer, UpdateUserInputReducer, SelectOptionsReducer, PaginationReducer})
+const rootreducer = combineReducers({GetDataReducer, UpdateUserInputReducer, SelectOptionsReducer, PaginationReducer})
 
 export default rootreducer

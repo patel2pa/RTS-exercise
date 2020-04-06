@@ -7,7 +7,6 @@ class Results extends React.Component {
             const Data = this.props.GetDataReducer.Data['hits']
             return Data.map((results, index) => (
                 <div key = {index}>
-
                     {results.title ? 
                         <div>
                             <h1>Title: {results.title}{results.story_title}</h1>
@@ -33,8 +32,7 @@ class Results extends React.Component {
                         </div>}
 
                     <h2>Author | {results.author}</h2>
-
-                    ---------------------------------------------------------------
+                ---------------------------------------------------------------
                 </div>
         ))}  
     }
